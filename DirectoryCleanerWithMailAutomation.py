@@ -18,7 +18,7 @@ def mailFile(attachPath,fileName,receiverID):
     email_password=password.pwd
     email_receiver=receiverID
 
-    subject='Pooja Choudhary'
+    subject='Log File of all deleted Files'
     body="""
    Please find the attached copy of log file created.
     """
@@ -186,7 +186,7 @@ def main():
         print("Usage : ApplicationName  AbsolutePath_of_Directory TimeInterval Receiver mail id")
         exit()
 
-    schedule.every(1).minutes.do(TaskScheduled)
+    schedule.every(argv[2]).minutes.do(TaskScheduled)
 
     while(True):
         schedule.run_pending()
